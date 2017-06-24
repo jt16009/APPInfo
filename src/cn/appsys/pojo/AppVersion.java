@@ -4,17 +4,17 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class AppVersion {
-	private Integer id;
-	private Integer appId;
-	private String versionNo;
-	private String versionInfo;
-	private Integer publishStatus;//发布状态id
+	private Integer id;//主键id
+	private Integer appId;//appId （来源于：app_info表的主键id）
+	private String versionNo;//版本号
+	private String versionInfo;//版本描述
+	private Integer publishStatus;//发布状态id （来源于：data_dictionary，1 不发布 2 已发布 3 预发布）
 	private String downloadLink;//apk文件下载链接
-	private BigDecimal versionSize;
-	private Integer createdBy;
-	private Date creationDate;
-	private Integer modifyBy;
-	private Date modifyDate;
+	private BigDecimal versionSize;//版本大小
+	private Integer createdBy;//创建者 （来源于dev_user开发者信息表的用户id）
+	private Date creationDate;//创建时间
+	private Integer modifyBy;//更新者（来源于dev_user开发者信息表的用户id）
+	private Date modifyDate;//更新时间
 	private String apkLocPath;//apk文件的服务器存储路径
 	
 	private String appName;//APP软件名称

@@ -65,11 +65,11 @@
 	<!-- 配置interceptors -->
 	<mvc:interceptors>
 		<mvc:interceptor>
+			<!-- 所有以/manager/backend和 /dev/flatform开头的请求都会通过自定义的拦截器-->
 			<mvc:mapping path="/manager/backend/**"/>
 			<mvc:mapping path="/dev/flatform/**"/>
 			<bean class="cn.appsys.interceptor.SysInterceptor"/>
-		</mvc:interceptor>
-		
+		</mvc:interceptor>	
 	</mvc:interceptors>
 	
 	<!-- 配置文件上传  MultipartResolver-->

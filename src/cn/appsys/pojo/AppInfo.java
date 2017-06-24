@@ -4,29 +4,29 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class AppInfo {
-	private Integer id;
+	private Integer id;//主键id
 	private String softwareName;//软件名称
-	private String APKName;//APK名称
+	private String APKName;//APK名称 （唯一）
 	private String supportROM;//支持ROM
 	private String interfaceLanguage;//界面语言
 	private Date updateDate;//更新日期
 	private BigDecimal softwareSize;//软件大小（单位：M）
-	private Integer devId;//开发者id
+	private Integer devId;//开发者id （来源于：dev_user表的开发者id）
 	private String appInfo;//应用简介
-	private Integer status;//app状态id
+	private Integer status;//app状态id （来源于：data_dictionary，1 待审核 2 审核通过 3 审核不通过 4 已上架 5 已下架）
 	private Date onSaleDate;//上架时间
 	private Date offSaleDate;//下架时间
-	private Integer categoryLevel3;//所属三级分类id
-	private Integer downloads;//下载量（单位：次）
-	private Integer flatformId;//app所属平台id
-	private Integer createdBy;
-	private Date creationDate;
-	private Integer modifyBy;
-	private Date modifyDate;
-	
+	private Integer categoryLevel3;//所属三级分类id （来源于：data_dictionary）
+	private Integer downloads;//下载量（单位：次） 
+	private Integer flatformId;//app所属平台id （来源于：data_dictionary，1 手机 2 平板 3 通用）
+	private Integer createdBy;//创建者（来源于：dev_user表的开发者id）
+	private Date creationDate;//创建时间
+	private Integer modifyBy;//更新者 （来源于dev_user开发者信息表的用户id）
+	private Date modifyDate;//最新更新时间
+	//新增属性
 	private String statusName;//app状态名称
 	private String flatformName;//app所属平台名称
-	private String categoryLevel3Name;//所属三级分类名称
+	private String categoryLevel3Name;//所属三级分类名称 
 	private String devName;//开发者名称
 	
 	private Integer categoryLevel1;//所属一级分类id

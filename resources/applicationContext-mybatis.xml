@@ -49,14 +49,15 @@
  	</bean>
  	
  	<aop:aspectj-autoproxy/>
-      <aop:config proxy-target-class="true">
+      <!-- <aop:config proxy-target-class="true"> -->
+      <aop:config>
       	<aop:pointcut expression="execution(* *cn.appsys.service..*(..))" id="transService"/>
       	<aop:advisor advice-ref="myAdvice" pointcut-ref="transService"/>
       </aop:config>
       
  	<tx:advice id="myAdvice" transaction-manager="txManager">  
     	<tx:attributes>  
-	        <tx:method name="appsys*"  propagation="REQUIRED" rollback-for="Exception"  />
+	        <!-- <tx:method name="appsys*"  propagation="REQUIRED" rollback-for="Exception"  /> -->
 	        <tx:method name="*" />
     	</tx:attributes>  
  	</tx:advice>
